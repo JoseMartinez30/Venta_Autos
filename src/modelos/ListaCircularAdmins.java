@@ -9,7 +9,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
-import vistas.VistaVerAdmins;
+import vistas.VistaVerAdminitradores;
 
 /**
  *
@@ -18,18 +18,18 @@ import vistas.VistaVerAdmins;
 public class ListaCircularAdmins {
 
     Administrador cab;
-    private VistaVerAdmins vistaVerAdmins;
+    private VistaVerAdminitradores vistaVerAdmins;
 
-    public ListaCircularAdmins(VistaVerAdmins vistaVerAdmins) {
+    public ListaCircularAdmins(VistaVerAdminitradores vistaVerAdmins) {
         this.vistaVerAdmins = vistaVerAdmins;
         cab = null;
     }
 
-    public VistaVerAdmins getVistaVerAdmins() {
+    public VistaVerAdminitradores getVistaVerAdmins() {
         return vistaVerAdmins;
     }
 
-    public void setVistaVerAdmins(VistaVerAdmins vistaVerAdmins) {
+    public void setVistaVerAdmins(VistaVerAdminitradores vistaVerAdmins) {
         this.vistaVerAdmins = vistaVerAdmins;
     }
 
