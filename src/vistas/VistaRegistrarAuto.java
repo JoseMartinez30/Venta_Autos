@@ -106,7 +106,7 @@ public class VistaRegistrarAuto extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(137, 219, 211));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 255));
 
         jLabel1.setText("Codigo");
 

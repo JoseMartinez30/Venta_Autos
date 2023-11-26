@@ -124,7 +124,7 @@ public class VistaRegistrarCliente extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Registrar Cliente");
 
-        jPanel1.setBackground(new java.awt.Color(137, 219, 211));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 255));
 
         jLabel1.setText("Identificacion:");
 

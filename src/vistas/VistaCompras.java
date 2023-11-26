@@ -71,7 +71,7 @@ public class VistaCompras extends javax.swing.JFrame {
         setTitle("Comprar");
         setBackground(new java.awt.Color(137, 219, 211));
 
-        jPanel1.setBackground(new java.awt.Color(137, 219, 211));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         tbCompras.setModel(new javax.swing.table.DefaultTableModel(
