@@ -9,9 +9,9 @@ public class ColaAutos {
     private Auto primero;
     private Auto ultimo;
     private int totalProductos;
-    private VistaRegistrarProducto vistaRegistrarProducto;
+    private VistaRegistrarAuto vistaRegistrarProducto;
 
-    public ColaAutos(VistaRegistrarProducto vistaRegistrarProducto) {
+    public ColaAutos(VistaRegistrarAuto vistaRegistrarProducto) {
         this.primero = null;
         this.ultimo = null;
         this.totalProductos = 0;
@@ -38,11 +38,11 @@ public class ColaAutos {
         return totalProductos;
     }
 
-    public VistaRegistrarProducto getVistaRegistrarProducto() {
+    public VistaRegistrarAuto getVistaRegistrarProducto() {
         return vistaRegistrarProducto;
     }
 
-    public void setVistaRegistrarProducto(VistaRegistrarProducto vistaRegistrarProducto) {
+    public void setVistaRegistrarProducto(VistaRegistrarAuto vistaRegistrarProducto) {
         this.vistaRegistrarProducto = vistaRegistrarProducto;
     }
 
