@@ -24,11 +24,11 @@ public class VistaListaDeseos extends javax.swing.JFrame {
     }
 
     public JTable getTbRepartidores() {
-        return tbRepartidores;
+        return tbDeseos;
     }
 
     public void setTbRepartidores(JTable tbRepartidores) {
-        this.tbRepartidores = tbRepartidores;
+        this.tbDeseos = tbRepartidores;
     }
 
     public JMenuItem getMenuItemEliminar() {
@@ -79,7 +79,7 @@ public class VistaListaDeseos extends javax.swing.JFrame {
         menuItemEliminar = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tbRepartidores = new javax.swing.JTable();
+        tbDeseos = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
 
         menuItemEliminar.setText("Eliminar");
@@ -89,7 +89,7 @@ public class VistaListaDeseos extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 255));
 
-        tbRepartidores.setModel(new javax.swing.table.DefaultTableModel(
+        tbDeseos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -100,9 +100,9 @@ public class VistaListaDeseos extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tbRepartidores.setComponentPopupMenu(menuRepartidor);
-        tbRepartidores.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jScrollPane1.setViewportView(tbRepartidores);
+        tbDeseos.setComponentPopupMenu(menuRepartidor);
+        tbDeseos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jScrollPane1.setViewportView(tbDeseos);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("LISTADO DE DESEOS");
@@ -153,6 +153,6 @@ public class VistaListaDeseos extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenuItem menuItemEliminar;
     private javax.swing.JPopupMenu menuRepartidor;
-    private javax.swing.JTable tbRepartidores;
+    private javax.swing.JTable tbDeseos;
     // End of variables declaration//GEN-END:variables
 }
