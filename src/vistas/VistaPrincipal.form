@@ -9,7 +9,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/img/folder.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Menu"/>
+            <Property name="text" type="java.lang.String" value="Opciones"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="itemIniciarSeision">
@@ -17,7 +17,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/img/log_in.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Inicio de sesion"/>
+                <Property name="text" type="java.lang.String" value="Iniciar Sesion"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator2">
@@ -27,7 +27,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/img/register.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Resgistrarse?"/>
+                <Property name="text" type="java.lang.String" value="Registrar"/>
               </Properties>
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="itemCliente">
@@ -49,6 +49,14 @@
                   </Properties>
                 </MenuItem>
                 <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator5">
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="itemRepartidor">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/img/repartidor.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Repartidor"/>
+                  </Properties>
                 </MenuItem>
               </SubComponents>
             </Menu>
@@ -102,11 +110,9 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JPanel" name="jPanel1">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="33" red="33" type="rgb"/>
-        </Property>
-      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPrincipal()"/>
+      </AuxValues>
 
       <Layout>
         <DimensionLayout dim="0">

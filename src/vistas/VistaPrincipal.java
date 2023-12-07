@@ -5,6 +5,7 @@
 package vistas;
 
 import javax.swing.JMenuItem;
+import modelos.fondos.FondoPrincipal;
 
 /**
  *
@@ -43,6 +44,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
         this.itemIniciarSeision = itemIniciarSeision;
     }
 
+    public JMenuItem getItemRepartidor() {
+        return itemRepartidor;
+    }
+
+    public void setItemRepartidor(JMenuItem itemRepartidor) {
+        this.itemRepartidor = itemRepartidor;
+    }
+
     public JMenuItem getItemSalir() {
         return itemSalir;
     }
@@ -60,7 +69,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jPanel1 = new FondoPrincipal();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuOpciones = new javax.swing.JMenu();
         itemIniciarSeision = new javax.swing.JMenuItem();
@@ -70,13 +79,12 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JPopupMenu.Separator();
         itemAdministrador = new javax.swing.JMenuItem();
         jSeparator5 = new javax.swing.JPopupMenu.Separator();
+        itemRepartidor = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         itemSalir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Principal");
-
-        jPanel1.setBackground(new java.awt.Color(51, 51, 255));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -90,15 +98,15 @@ public class VistaPrincipal extends javax.swing.JFrame {
         );
 
         menuOpciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/folder.png"))); // NOI18N
-        menuOpciones.setText("Menu");
+        menuOpciones.setText("Opciones");
 
         itemIniciarSeision.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/log_in.png"))); // NOI18N
-        itemIniciarSeision.setText("Inicio de sesion");
+        itemIniciarSeision.setText("Iniciar Sesion");
         menuOpciones.add(itemIniciarSeision);
         menuOpciones.add(jSeparator2);
 
         menuRegistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/register.png"))); // NOI18N
-        menuRegistrar.setText("Resgistrarse?");
+        menuRegistrar.setText("Registrar");
 
         itemCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cliente.png"))); // NOI18N
         itemCliente.setText("Cliente");
@@ -109,6 +117,10 @@ public class VistaPrincipal extends javax.swing.JFrame {
         itemAdministrador.setText("Administrador");
         menuRegistrar.add(itemAdministrador);
         menuRegistrar.add(jSeparator5);
+
+        itemRepartidor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/repartidor.png"))); // NOI18N
+        itemRepartidor.setText("Repartidor");
+        menuRegistrar.add(itemRepartidor);
 
         menuOpciones.add(menuRegistrar);
         menuOpciones.add(jSeparator3);
@@ -135,11 +147,13 @@ public class VistaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem itemAdministrador;
     private javax.swing.JMenuItem itemCliente;
     private javax.swing.JMenuItem itemIniciarSeision;
+    private javax.swing.JMenuItem itemRepartidor;
     private javax.swing.JMenuItem itemSalir;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
