@@ -102,6 +102,7 @@ public class ListaCircularAdmins {
         } else {
             q = cab;
             
+            
             do {
                 if (q.getUsuario().equalsIgnoreCase(usuario)
                         && q.getContrasenia().equalsIgnoreCase(contrasenia)) {
