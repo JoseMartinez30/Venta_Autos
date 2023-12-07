@@ -4,8 +4,6 @@
  */
 package vistas;
 
-import javax.swing.JMenuItem;
-import javax.swing.JPopupMenu;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -13,39 +11,20 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author usuario
  */
-public class VistaListaDeseos extends javax.swing.JFrame {
+public class VistaVerAdmins extends javax.swing.JFrame {
 
     /**
      * Creates new form VistaVerClientes
      */
-    public VistaListaDeseos() {
+    public VistaVerAdmins() {
         initComponents();
         cargarInfo();
     }
 
-    public JTable getTbRepartidores() {
-        return tbDeseos;
+    public JTable getTbAdmins() {
+        return tbAdmins;
     }
-
-    public void setTbRepartidores(JTable tbRepartidores) {
-        this.tbDeseos = tbRepartidores;
-    }
-
-    public JMenuItem getMenuItemEliminar() {
-        return menuItemEliminar;
-    }
-
-    public void setMenuItemEliminar(JMenuItem menuItemEliminar) {
-        this.menuItemEliminar = menuItemEliminar;
-    }
-
-    public JPopupMenu getMenuRepartidor() {
-        return menuRepartidor;
-    }
-
-    public void setMenuRepartidor(JPopupMenu menuRepartidor) {
-        this.menuRepartidor = menuRepartidor;
-    }
+    
     public void cargarInfo() {
 
         DefaultTableModel dtm = new DefaultTableModel();
@@ -62,7 +41,7 @@ public class VistaListaDeseos extends javax.swing.JFrame {
         dtm.setColumnIdentifiers(identificadores);
         Object[] row = new Object[7];
 
-        getTbRepartidores().setModel(dtm);
+        getTbAdmins().setModel(dtm);
     }
 
 
@@ -75,21 +54,15 @@ public class VistaListaDeseos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        menuRepartidor = new javax.swing.JPopupMenu();
-        menuItemEliminar = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tbDeseos = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-
-        menuItemEliminar.setText("Eliminar");
-        menuRepartidor.add(menuItemEliminar);
+        tbAdmins = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 255));
+        jPanel1.setBackground(new java.awt.Color(137, 219, 211));
 
-        tbDeseos.setModel(new javax.swing.table.DefaultTableModel(
+        tbAdmins.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -100,34 +73,23 @@ public class VistaListaDeseos extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tbDeseos.setComponentPopupMenu(menuRepartidor);
-        tbDeseos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jScrollPane1.setViewportView(tbDeseos);
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setText("LISTADO DE DESEOS");
+        jScrollPane1.setViewportView(tbAdmins);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
+                .addGap(31, 31, 31)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 749, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(319, 319, 319)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(54, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -138,9 +100,7 @@ public class VistaListaDeseos extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -148,11 +108,8 @@ public class VistaListaDeseos extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JMenuItem menuItemEliminar;
-    private javax.swing.JPopupMenu menuRepartidor;
-    private javax.swing.JTable tbDeseos;
+    private javax.swing.JTable tbAdmins;
     // End of variables declaration//GEN-END:variables
 }

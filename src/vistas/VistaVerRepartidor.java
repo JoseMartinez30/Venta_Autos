@@ -13,12 +13,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author usuario
  */
-public class VistaActulizarAutos extends javax.swing.JFrame {
+public class VistaVerRepartidor extends javax.swing.JFrame {
 
     /**
      * Creates new form VistaVerClientes
      */
-    public VistaActulizarAutos() {
+    public VistaVerRepartidor() {
         initComponents();
         cargarInfo();
     }
@@ -87,7 +87,7 @@ public class VistaActulizarAutos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 255));
+        jPanel1.setBackground(new java.awt.Color(137, 219, 211));
 
         tbRepartidores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
