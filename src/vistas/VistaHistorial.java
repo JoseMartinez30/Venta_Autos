@@ -53,7 +53,7 @@ public class VistaHistorial extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 255));
+        jPanel1.setBackground(new java.awt.Color(137, 219, 211));
 
         tbHistorial.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

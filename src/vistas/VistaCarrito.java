@@ -6,8 +6,8 @@ package vistas;
 
 import javax.swing.JButton;
 import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
-
+import modelos.fondos.BotonCarrito;
+import modelos.fondos.BotonHistorial;
 
 /**
  *
@@ -38,21 +38,6 @@ public class VistaCarrito extends javax.swing.JFrame {
         this.tbCarrito = tbCarrito;
     }
 
-    public void cargarTabla() {
-        DefaultTableModel modelo = new DefaultTableModel();
-        modelo.addColumn("Número de Pedido");
-        modelo.addColumn("Fecha");
-        modelo.addColumn("Nombre Cliente");
-        modelo.addColumn("Nombre Usuario");
-        modelo.addColumn("Dirección");
-        modelo.addColumn("Cod Producto");
-        modelo.addColumn("Producto");
-        modelo.addColumn("Cantidad");
-        modelo.addColumn("Precio Unitario");
-        modelo.addColumn("Total");
-        getTbCarrito().setModel(modelo);
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -71,7 +56,7 @@ public class VistaCarrito extends javax.swing.JFrame {
         setTitle("Comprar");
         setBackground(new java.awt.Color(137, 219, 211));
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 255));
+        jPanel1.setBackground(new java.awt.Color(137, 219, 211));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         tbCarrito.setModel(new javax.swing.table.DefaultTableModel(
@@ -79,7 +64,7 @@ public class VistaCarrito extends javax.swing.JFrame {
 
             },
             new String [] {
-                "# Pedido", "Fecha", "Nombre", "Usuario", "Direccion", "Codigo Auto", "Marca", "Cantidad", "Precio Unit", "Total"
+                "# Pedido", "Fecha", "Nombre", "Usuario", "Direccion", "Cod zatapo", "Marca", "Cantidad", "Precio Unit", "Total"
             }
         ));
         jScrollPane1.setViewportView(tbCarrito);
