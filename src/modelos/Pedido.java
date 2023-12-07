@@ -53,6 +53,10 @@ public class Pedido {
         this.siguiente = null;
     }
 
+    Pedido(int cod, Cliente cliente, Producto producto) {
+ 
+    }
+
   /*  public Pedido(
             long numeroPedido,
             String fecha,

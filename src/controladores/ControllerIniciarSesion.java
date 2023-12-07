@@ -138,7 +138,10 @@ public class ControllerIniciarSesion implements ActionListener, CajasTxts {
         if (e.getSource() == getVistaIniciarSesion().getBtnIngresar()) {
             if (isCajasTxtLlenas()) {
                 String usuario = getVistaIniciarSesion().getTxtUsuario().getText();
-                String contrasenia = new String(getVistaIniciarSesion().getTxtContrasenia().getPassword());
+                char[] passwordChars = getVistaIniciarSesion().getTxtContrasenia().getPassword();
+                String password = new String(passwordChars);
+                String contrasenia = new String(password);
+                System.out.println(""+contrasenia);
                 cargarVistas(usuario, contrasenia);
             } else {
                 JOptionPane.showMessageDialog(null, "Debe llenar todos los campos");
