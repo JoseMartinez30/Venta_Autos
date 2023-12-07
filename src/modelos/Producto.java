@@ -1,17 +1,15 @@
 package modelos;
 
-public class Auto {
+public class Producto {
 
     private int codigo;
     private String marca;
     private String modelo;
-    private String color;
     private double precio;
     private int cantidad;
-    private Auto siguiente;
-    
-    
-    public Auto(int codigo, String marca, String modelo, double precio, int cantidad) {
+    private Producto siguiente;
+
+    public Producto(int codigo, String marca, String modelo, double precio, int cantidad) {
         this.codigo = codigo;
         this.marca = marca;
         this.modelo = modelo;
@@ -20,7 +18,7 @@ public class Auto {
         this.siguiente = null;
     }
 
-    public Auto() {
+    public Producto() {
     }
 
     public int getCodigo() {
@@ -63,12 +61,21 @@ public class Auto {
         this.cantidad = cantidad;
     }
 
-    public Auto getSiguiente() {
+    public Producto getSiguiente() {
         return siguiente;
     }
 
-    public void setSiguiente(Auto siguiente) {
+    public void setSiguiente(Producto siguiente) {
         this.siguiente = siguiente;
     }
 
+    /**
+     * Método que devuelve el nombre del producto
+     *
+     * @return nombre del producto
+     */
+    @Override
+    public String toString() {
+        return marca;
+    }
 }

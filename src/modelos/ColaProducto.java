@@ -4,33 +4,33 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import vistas.*;
 
-public class ColaAutos {
+public class ColaProducto {
 
-    private Auto primero;
-    private Auto ultimo;
+    private Producto primero;
+    private Producto ultimo;
     private int totalProductos;
-    private VistaRegistrarAuto vistaRegistrarProducto;
+    private VistaRegistrarProducto vistaRegistrarProducto;
 
-    public ColaAutos(VistaRegistrarAuto vistaRegistrarProducto) {
+    public ColaProducto(VistaRegistrarProducto vistaRegistrarProducto) {
         this.primero = null;
         this.ultimo = null;
         this.totalProductos = 0;
         this.vistaRegistrarProducto = vistaRegistrarProducto;
     }
 
-    public Auto getPrimero() {
+    public Producto getPrimero() {
         return primero;
     }
 
-    public void setPrimero(Auto primero) {
+    public void setPrimero(Producto primero) {
         this.primero = primero;
     }
 
-    public Auto getUltimo() {
+    public Producto getUltimo() {
         return ultimo;
     }
 
-    public void setUltimo(Auto ultimo) {
+    public void setUltimo(Producto ultimo) {
         this.ultimo = ultimo;
     }
 
@@ -38,11 +38,11 @@ public class ColaAutos {
         return totalProductos;
     }
 
-    public VistaRegistrarAuto getVistaRegistrarProducto() {
+    public VistaRegistrarProducto getVistaRegistrarProducto() {
         return vistaRegistrarProducto;
     }
 
-    public void setVistaRegistrarProducto(VistaRegistrarAuto vistaRegistrarProducto) {
+    public void setVistaRegistrarProducto(VistaRegistrarProducto vistaRegistrarProducto) {
         this.vistaRegistrarProducto = vistaRegistrarProducto;
     }
 
@@ -50,7 +50,7 @@ public class ColaAutos {
         return getTotalProductos() == 0;
     }
 
-    public void agregar(Auto producto) {
+    public void agregar(Producto producto) {
         if (colaVacia()) {
             setPrimero(producto);
             setUltimo(producto);
@@ -81,7 +81,7 @@ public class ColaAutos {
     }
 
     public void agregarProductoTabla(JTable tabla) {
-        Auto aux = getPrimero();
+        Producto aux = getPrimero();
         DefaultTableModel modelo = new DefaultTableModel();
         int fila = 0;
 
@@ -107,7 +107,7 @@ public class ColaAutos {
 
     public boolean buscar(int codigo) {
         if (!colaVacia()) {
-            Auto aux = getPrimero();
+            Producto aux = getPrimero();
             while (aux != null) {
                 if (aux.getCodigo() == codigo) {
                     return true;
@@ -118,9 +118,9 @@ public class ColaAutos {
         return false;
     }
 
-    public Auto buscar(String marca) {
+    public Producto buscar(String marca) {
         if (!colaVacia()) {
-            Auto aux = getPrimero();
+            Producto aux = getPrimero();
             while (aux != null) {
                 if (aux.getMarca().equals(marca)) {
                     return aux;
@@ -139,7 +139,7 @@ public class ColaAutos {
      */
     public void actualizarCantidad(int codigo, int cantidad) {
         if (!colaVacia()) {
-            Auto aux = getPrimero();
+            Producto aux = getPrimero();
             while (aux != null) {
                 if (aux.getCodigo() == codigo) {
                     aux.setCantidad(cantidad);
@@ -162,10 +162,10 @@ public class ColaAutos {
      *
      * @param producto que se va a eliminar.
      */
-    public void eliminar(Auto producto) {
+    public void eliminar(Producto producto) {
         if (!colaVacia()) {
-            Auto aux = getPrimero();
-            Auto anterior = null;
+            Producto aux = getPrimero();
+            Producto anterior = null;
             while (aux != null) {
                 if (aux.getCodigo() == producto.getCodigo()) {
                     if (anterior == null) {
@@ -186,8 +186,8 @@ public class ColaAutos {
 
     public void buscarQuitar(int codigo) {
         if (!colaVacia()) {
-            Auto aux = getPrimero();
-            Auto anterior = null;
+            Producto aux = getPrimero();
+            Producto anterior = null;
             while (aux != null) {
                 if (aux.getCodigo() == codigo) {
                     if (anterior == null) {
@@ -212,11 +212,11 @@ public class ColaAutos {
         totalProductos = 0;
     }
 
-    public Auto obtenerPrimero() {
+    public Producto obtenerPrimero() {
         return getPrimero();
     }
 
-    public Auto obtenerUltimo() {
+    public Producto obtenerUltimo() {
         return getUltimo();
     }
 

@@ -10,20 +10,20 @@ import modelos.superClases.Usuario;
  *
  * @author usuario
  */
-public class Administrador extends Usuario {
+public class Trasportadora extends Usuario {
 
-    private Administrador sig;
+    private Trasportadora sig;
 
-    public Administrador(long identificacion, String nombre, String apellidos, String direccion, String telefono, String usuario, String contrasenia) {
+    public Trasportadora(long identificacion, String nombre, String apellidos, String direccion, String telefono, String usuario, String contrasenia) {
         super(identificacion, nombre, apellidos, direccion, telefono, usuario, contrasenia);
         this.sig = null;
     }
 
-    public Administrador getSig() {
+    public Trasportadora getSig() {
         return sig;
     }
 
-    public void setSig(Administrador sig) {
+    public void setSig(Trasportadora sig) {
         this.sig = sig;
     }
 

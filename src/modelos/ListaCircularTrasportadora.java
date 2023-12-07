@@ -9,50 +9,44 @@ import javax.swing.JPasswordField;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
-import vistas.VistaVerClientes;
+import vistas.*;
 
 /**
  *
  * @author usuario
  */
-public class ListaCircularClientes {
+public class ListaCircularTrasportadora {
 
-    Cliente cab;
-    private VistaVerClientes vistaVerClientes;
-    private ArchivoCliente archivoCliente;
+    Trasportadora cab;
 
-    public ListaCircularClientes(VistaVerClientes vistaVerClientes, ArchivoCliente archivoCliente) {
-        this.vistaVerClientes = vistaVerClientes;
-        this.archivoCliente = archivoCliente;
-        this.cab = null;
+    private ArchivoTrasportadora archivoRepartidor;
+    private VistaVerRepartidor vistaVerRepartidor;
+
+    public ListaCircularTrasportadora(ArchivoTrasportadora archivoRepartidor,
+            VistaVerRepartidor vistaVerRepartidor) {
+        this.archivoRepartidor = archivoRepartidor;
+        this.vistaVerRepartidor = vistaVerRepartidor;
+        cab = null;
     }
 
-    public Cliente getCab() {
-        return cab;
+    public ArchivoTrasportadora getArchivoRepartidor() {
+        return archivoRepartidor;
     }
 
-    public void setCab(Cliente cab) {
-        this.cab = cab;
+    public void setArchivoRepartidor(ArchivoTrasportadora archivoRepartidor) {
+        this.archivoRepartidor = archivoRepartidor;
     }
 
-    public ArchivoCliente getArchivoCliente() {
-        return archivoCliente;
+    public VistaVerRepartidor getVistaVerRepartidor() {
+        return vistaVerRepartidor;
     }
 
-    public void setArchivoCliente(ArchivoCliente archivoCliente) {
-        this.archivoCliente = archivoCliente;
+    public void setVistaVerRepartidor(VistaVerRepartidor vistaVerRepartidor) {
+        this.vistaVerRepartidor = vistaVerRepartidor;
     }
 
-    public VistaVerClientes getVistaVerClientes() {
-        return vistaVerClientes;
-    }
-
-    public void setVistaVerClientes(VistaVerClientes vistaVerClientes) {
-        this.vistaVerClientes = vistaVerClientes;
-    }
-
-    public Cliente getBuscarCliente(long id, String usuario) {
-        Cliente q = null;
+    public Trasportadora getBuscarCliente(long id, String usuario) {
+        Trasportadora q = null;
         if (cab == null) {
             return null;
         } else {
@@ -68,26 +62,8 @@ public class ListaCircularClientes {
         }
     }
 
-    public Cliente getObCliente(String usuario, String contrasenia) {
-        Cliente q = null;
-        if (cab == null) {
-            return null;
-        } else {
-            q = cab;
-            do {
-                if (q.getUsuario().equalsIgnoreCase(usuario)
-                        && q.getContrasenia().equalsIgnoreCase(contrasenia)) {
-                    return q;
-                } else {
-                    q = q.getSig();
-                }
-            } while (q != cab);
-            return null;
-        }
-    }
-
     public boolean getBuscarCliente(String usuario, String contrasenia) {
-        Cliente q = null;
+        Trasportadora q = null;
         if (cab == null) {
             return false;
         } else {
@@ -104,8 +80,8 @@ public class ListaCircularClientes {
         }
     }
 
-    public Cliente getBuscarCliente(long id) {
-        Cliente q = null;
+    public Trasportadora getBuscarCliente(long id) {
+        Trasportadora q = null;
         if (cab == null) {
             return null;
         } else {
@@ -121,10 +97,10 @@ public class ListaCircularClientes {
         }
     }
 
-    public Cliente getCrearNodo(JTextField txtIdentificacion, JTextField txtNombre,
+    public Trasportadora getCrearNodo(JTextField txtIdentificacion, JTextField txtNombre,
             JTextField txtApellidos, JTextField txtDireccion, JTextField txtTelefono,
             JTextField txtUsuario, JPasswordField txtContrasenia) {
-        Cliente info = null, b = null;
+        Trasportadora info = null, b = null;
         long id = Long.parseLong(txtIdentificacion.getText());
         String nombre = txtNombre.getText(),
                 apellidos = txtApellidos.getText(),
@@ -132,7 +108,7 @@ public class ListaCircularClientes {
                 telefono = txtTelefono.getText(),
                 usuario = txtUsuario.getText(),
                 contrasenia = new String(txtContrasenia.getPassword());
-        b = ListaCircularClientes.this.getBuscarCliente(id, usuario);
+        b = getBuscarCliente(id, usuario);
         if (b != null) {
             JOptionPane.showMessageDialog(null,
                     "Error! Esta identificion o Usuario ya existe! "
@@ -145,15 +121,15 @@ public class ListaCircularClientes {
             txtContrasenia.setText("");
 
         } else {
-            info = new Cliente(id, nombre, apellidos, direccion,
+            info = new Trasportadora(id, nombre, apellidos, direccion,
                     telefono, usuario, contrasenia);
-            JOptionPane.showMessageDialog(null, "Cliente Registrado");
+            JOptionPane.showMessageDialog(null, "Administrador Registrado");
         }
         return info;
     }
 
-    public Cliente getUltimo() {
-        Cliente q;
+    public Trasportadora getUltimo() {
+        Trasportadora q;
         if (cab == null) {
             return null;
         } else {
@@ -169,39 +145,25 @@ public class ListaCircularClientes {
             JTextField txtApellidos, JTextField txtDireccion, JTextField txtTelefono,
             JTextField txtUsuario, JPasswordField txtContrasenia) {
 
-        Cliente info = getCrearNodo(txtIdentificacion, txtNombre, txtApellidos,
+        Trasportadora info = getCrearNodo(txtIdentificacion, txtNombre, txtApellidos,
                 txtDireccion, txtTelefono, txtUsuario, txtContrasenia);
-        Cliente q;
+        Trasportadora q;
         if (info != null) {
             if (cab == null) {
                 cab = info;
                 cab.setSig(cab);
                 JOptionPane.showMessageDialog(null,
-                        "Cliente registrado.  Un cliente en la lista!");
-                archivoCliente.guardar(info);
-                cargarInfo(getVistaVerClientes().getTbClientes());
-                txtIdentificacion.setText("");
-                txtNombre.setText("");
-                txtApellidos.setText("");
-                txtDireccion.setText("");
-                txtTelefono.setText("");
-                txtUsuario.setText("");
-                txtContrasenia.setText("");
+                        "Repartidor registrado.  Un Repartidor en la lista!");
+                getArchivoRepartidor().guardar(info);
+                cargarInfo(getVistaVerRepartidor().getTbRepartidores());
             } else {
                 q = getUltimo();
                 q.setSig(info);
                 info.setSig(cab);
                 JOptionPane.showMessageDialog(null,
-                        "Cliente agregado al final de la lista!");
-                archivoCliente.guardar(info);
-                cargarInfo(getVistaVerClientes().getTbClientes());
-                txtIdentificacion.setText("");
-                txtNombre.setText("");
-                txtApellidos.setText("");
-                txtDireccion.setText("");
-                txtTelefono.setText("");
-                txtUsuario.setText("");
-                txtContrasenia.setText("");
+                        "Repartidor agregado al final de la lista!");
+                getArchivoRepartidor().guardar(info);
+                cargarInfo(getVistaVerRepartidor().getTbRepartidores());
             }
         } else {
             JOptionPane.showMessageDialog(null,
@@ -210,27 +172,32 @@ public class ListaCircularClientes {
         }
     }
 
-    public void setAddFin(Cliente cliente) {
-        Cliente q;
-        if (cliente != null) {
+    public void setAddFin(Trasportadora repartidor) {
+        Trasportadora info = repartidor;
+        Trasportadora q;
+        if (info != null) {
             if (cab == null) {
-                cab = cliente;
+                cab = info;
                 cab.setSig(cab);
-                cargarInfo(getVistaVerClientes().getTbClientes());
+                cargarInfo(getVistaVerRepartidor().getTbRepartidores());
             } else {
                 q = getUltimo();
-                q.setSig(cliente);
-                cliente.setSig(cab);
-                cargarInfo(getVistaVerClientes().getTbClientes());
+                q.setSig(info);
+                info.setSig(cab);
+                cargarInfo(getVistaVerRepartidor().getTbRepartidores());
             }
+        } else {
+            JOptionPane.showMessageDialog(null,
+                    "Vuelve a llenar los campos!");
+
         }
     }
 
-    public Cliente getAnterior(Cliente q) {
+    public Trasportadora getAnterior(Trasportadora q) {
         if ((cab == null) || (q == null)) {
             return null;
         } else {
-            Cliente a = cab;
+            Trasportadora a = cab;
             while (a.getSig() != q) {
                 a = a.getSig();
             }
@@ -238,13 +205,13 @@ public class ListaCircularClientes {
         }
     }
 
-    public void setEliminarCliente(long id) {
+    public void setEliminarRepartidor(long id) {
         if (cab == null) {
             JOptionPane.showMessageDialog(null,
                     "Lista vacía!!!");
         } else {
-            Cliente q = ListaCircularClientes.this.getBuscarCliente(id);
-            Cliente u, a;
+            Trasportadora q = getBuscarCliente(id);
+            Trasportadora u, a;
             if (q == null) {
                 JOptionPane.showMessageDialog(null,
                         "La identifica no existe!!!");
@@ -279,60 +246,28 @@ public class ListaCircularClientes {
         }
     }
 
-    public void cargarInfo() {
-        if (cab == null) {
-            JOptionPane.showMessageDialog(null,
-                    "Lista vacía!!!");
-        } else {
-            DefaultTableModel dtm = new DefaultTableModel();
-            String[] identificadores = {
-                "Idenficacion",
-                "Nombre",
-                "Apellidos",
-                "Direccion",
-                "Telefono",
-                "Usuario",
-                "contraseña"
-            };
-            dtm.setColumnIdentifiers(identificadores);
-            Object[] row = new Object[7];
-
-            Cliente aux = cab;
-            do {
-                row[0] = aux.getIdentificacion();
-                row[1] = aux.getNombre();
-                row[2] = aux.getApellidos();
-                row[3] = aux.getDireccion();
-                row[4] = aux.getTelefono();
-                row[5] = aux.getUsuario();
-                row[6] = aux.getContrasenia();
-
-                dtm.addRow(row);
-                aux = aux.getSig();
-            } while (aux != cab);
-            getVistaVerClientes().getTbClientes().setModel(dtm);
-        }
-    }
-
     public void cargarInfo(JTable jTable) {
+
+        DefaultTableModel dtm = new DefaultTableModel();
+        String[] identificadores = {
+            "Nit",
+            "Nombre",
+            "Apellidos",
+            "Direccion",
+            "Telefono",
+            "Usuario",
+            "contraseña"
+        };
         if (cab == null) {
             JOptionPane.showMessageDialog(null,
                     "Lista vacía!!!");
+            jTable.setModel(dtm);
         } else {
-            DefaultTableModel dtm = new DefaultTableModel();
-            String[] identificadores = {
-                "Idenficacion",
-                "Nombre",
-                "Apellidos",
-                "Direccion",
-                "Telefono",
-                "Usuario",
-                "contraseña"
-            };
+
             dtm.setColumnIdentifiers(identificadores);
             Object[] row = new Object[7];
 
-            Cliente aux = cab;
+            Trasportadora aux = cab;
             do {
                 row[0] = aux.getIdentificacion();
                 row[1] = aux.getNombre();

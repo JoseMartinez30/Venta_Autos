@@ -4,6 +4,8 @@
  */
 package modelos;
 
+import modelos.superClases.Usuario;
+
 /**
  *
  * @author usuario

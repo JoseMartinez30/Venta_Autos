@@ -9,7 +9,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
-import vistas.VistaVerAdminitradores;
+import vistas.VistaVerAdmins;
 
 /**
  *
@@ -18,19 +18,29 @@ import vistas.VistaVerAdminitradores;
 public class ListaCircularAdmins {
 
     Administrador cab;
-    private VistaVerAdminitradores vistaVerAdmins;
+    private VistaVerAdmins vistaVerAdmins;
+    private ArchivoAdmin archivoAdmin;
 
-    public ListaCircularAdmins(VistaVerAdminitradores vistaVerAdmins) {
+    public ListaCircularAdmins(VistaVerAdmins vistaVerAdmins, ArchivoAdmin archivoAdmin) {
         this.vistaVerAdmins = vistaVerAdmins;
+        this.archivoAdmin = archivoAdmin;
         cab = null;
     }
 
-    public VistaVerAdminitradores getVistaVerAdmins() {
+    public VistaVerAdmins getVistaVerAdmins() {
         return vistaVerAdmins;
     }
 
-    public void setVistaVerAdmins(VistaVerAdminitradores vistaVerAdmins) {
+    public void setVistaVerAdmins(VistaVerAdmins vistaVerAdmins) {
         this.vistaVerAdmins = vistaVerAdmins;
+    }
+
+    public ArchivoAdmin getArchivoAdmin() {
+        return archivoAdmin;
+    }
+
+    public void setArchivoAdmin(ArchivoAdmin archivoAdmin) {
+        this.archivoAdmin = archivoAdmin;
     }
 
     public Administrador getBuscarAdministrador(long id, String usuario) {
@@ -160,6 +170,7 @@ public class ListaCircularAdmins {
                 cab.setSig(cab);
                 JOptionPane.showMessageDialog(null,
                         "Administrador registrado.  Un administrador en la lista!");
+                getArchivoAdmin().guardar(info);
                 txtNombre.setText("");
                 txtApellidos.setText("");
                 txtDireccion.setText("");
@@ -172,6 +183,7 @@ public class ListaCircularAdmins {
                 info.setSig(cab);
                 JOptionPane.showMessageDialog(null,
                         "Administrador agregado al final de la lista!");
+                getArchivoAdmin().guardar(info);
                 txtNombre.setText("");
                 txtApellidos.setText("");
                 txtDireccion.setText("");

@@ -7,19 +7,35 @@ public class Pedido {
     private Cliente cliente;
     private ListaCircularClientes colaCliente;
     private String direccion;
-    private Auto producto;
+    private Producto producto;
+    //private ColaProducto colaProducto;
     private int cantidad;
     private double precioUnitario;
     private double total;
     private String estado;
     private Pedido siguiente;
 
+    public Pedido() {
+        this.numeroPedido = 0;
+        this.fecha = "";
+        this.cliente = null;
+        this.colaCliente = null;
+        this.direccion = "";
+        this.producto = null;
+        //this.colaProducto = null;
+        this.cantidad = 0;
+        this.precioUnitario = 0;
+        this.total = 0;
+        this.estado = "";
+        this.siguiente = null;
+    }
+
     public Pedido(
             long numeroPedido,
             String fecha,
             Cliente cliente,
             String direccion,
-            Auto producto,
+            Producto producto,
             int cantidad,
             double precioUnitario,
             double total,
@@ -37,9 +53,32 @@ public class Pedido {
         this.siguiente = null;
     }
 
-    public Pedido() {
-
-    }
+  /*  public Pedido(
+            long numeroPedido,
+            String fecha,
+            Cliente cliente,
+            // ColaCliente colaCliente,
+            String direccion,
+            Producto producto,
+            // ColaProducto colaProducto,
+            int cantidad,
+            double precioUnitario,
+            double total,
+            String estado
+    ) {
+        this.numeroPedido = numeroPedido;
+        this.fecha = fecha;
+        this.cliente = cliente;
+        this.colaCliente = colaCliente;
+        this.direccion = direccion;
+        this.producto = producto;
+       //  this.colaProducto = colaProducto;
+        this.cantidad = cantidad;
+        this.precioUnitario = precioUnitario;
+        this.total = total;
+        this.estado = estado;
+        this.siguiente = null;
+    }*/
 
     public long getNumeroPedido() {
         return numeroPedido;
@@ -65,6 +104,14 @@ public class Pedido {
         this.cliente = cliente;
     }
 
+   /* public ColaCliente getColaCliente() {
+        return colaCliente;
+    }
+
+    public void setColaCliente(ColaCliente colaCliente) {
+        this.colaCliente = colaCliente;
+    }*/
+
     public String getDireccion() {
         return direccion;
     }
@@ -73,13 +120,21 @@ public class Pedido {
         this.direccion = direccion;
     }
 
-    public Auto getProducto() {
+    public Producto getProducto() {
         return producto;
     }
 
-    public void setProducto(Auto producto) {
+    public void setProducto(Producto producto) {
         this.producto = producto;
     }
+
+  /*  public ColaProducto getColaProducto() {
+        return colaProducto;
+    }
+
+    public void setColaProducto(ColaProducto colaProducto) {
+        this.colaProducto = colaProducto;
+    }*/
 
     public int getCantidad() {
         return cantidad;
